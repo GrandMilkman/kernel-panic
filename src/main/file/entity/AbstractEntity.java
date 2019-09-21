@@ -1,7 +1,10 @@
 package file.entity;
 
-public class Entity {
+import org.springframework.data.annotation.Id;
+
+public class AbstractEntity {
 	
+	@Id
 	private Long id;
 
 	public Long getId() {

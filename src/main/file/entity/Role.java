@@ -1,7 +1,12 @@
 package file.entity;
 
-public class Role extends Entity{
+import javax.persistence.Column;
+import javax.persistence.Table;
+
+@Table(name="roles")
+public class Role extends AbstractEntity{
 	
+	@Column(name="name")
 	private String name;
 
     public String getName() {
