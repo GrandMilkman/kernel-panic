@@ -3,23 +3,25 @@ package file.entity;
 import java.sql.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Table;
 
+@Entity
+@Table(name = "message")
+public class Message extends AbstractEntity {
 
+	private static final long serialVersionUID = 1L;
 
-@Table(name="message")
-public class Message extends AbstractEntity{
-	
-	@Column(name="body")
+	@Column(name = "body")
 	private String body;
-	
-	@Column(name="from_id")
+
+	@Column(name = "from_id")
 	Long from_user_id;
-	
-	@Column(name="to_id")
+
+	@Column(name = "to_id")
 	Long to_user_id;
-	
-	@Column(name="date")
+
+	@Column(name = "date")
 	Date date;
 
 	public String getBody() {
@@ -53,5 +55,5 @@ public class Message extends AbstractEntity{
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	
+
 }

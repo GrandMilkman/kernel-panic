@@ -1,16 +1,21 @@
 package file.entity;
 
-import java.util.ArrayList;
 
-import javax.persistence.CascadeType;
+import java.util.List;
+
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+@Entity
 @Table(name = "users")
 public class User extends AbstractEntity {
+
+	private static final long serialVersionUID = 1L;
 
 	@Column(name = "name")
 	private String name;
@@ -27,10 +32,9 @@ public class User extends AbstractEntity {
 	@Column(name = "active")
 	private boolean active;
 
-	@ManyToMany(cascade = { CascadeType.ALL })
-	@JoinTable(name = "user_role", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = {
-			@JoinColumn(name = "role_id") })
-	private ArrayList<Role> roles;
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+	private List<Role> roles;
 
 	public String getName() {
 		return name;
@@ -64,11 +68,11 @@ public class User extends AbstractEntity {
 		this.phone_number = phone_number;
 	}
 
-	public ArrayList<Role> getRoles() {
+	public List<Role> getRoles() {
 		return roles;
 	}
 
-	public void setRoles(ArrayList<Role> roles) {
+	public void setRoles(final List<Role> roles) {
 		this.roles = roles;
 	}
 

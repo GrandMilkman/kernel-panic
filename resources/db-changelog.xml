@@ -70,7 +70,7 @@
             <column name="user_id" type="bigint">
                 <constraints nullable="false"/>
             </column>
-            <column name="role_id">
+            <column name="role_id" type="bigint">
                 <constraints nullable="false"/>
             </column>
         </createTable>
