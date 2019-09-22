@@ -39,6 +39,23 @@
             </column>
         </createTable>
 
+		<insert tableName="users">
+            <column name="id" valueNumeric="0"/>
+            <column name="name">Vasya_Pupkin</column>
+            <column name="password">secret</column>
+            <column name="active">true</column>
+            <column name="lang">ru</column>
+            <column name="phone_num">375295951925</column> 
+        </insert>
+        
+        <insert tableName="users">
+            <column name="name">Manager_Sasha</column>
+            <column name="password">secret</column>
+            <column name="active">true</column>
+            <column name="lang">ru</column>
+            <column name="phone_num">375295893528</column> 
+        </insert>
+        
         <createIndex tableName="users" indexName="user_name_uk" unique="true">
             <column name="name" />
         </createIndex>
