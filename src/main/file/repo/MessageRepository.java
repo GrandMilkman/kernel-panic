@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import file.entity.Message;
 
-@Repository
 public interface MessageRepository extends JpaRepository<Message, Serializable> {
 
 }
