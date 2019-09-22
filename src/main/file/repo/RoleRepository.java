@@ -5,7 +5,9 @@ import java.io.Serializable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import file.entity.Role;
+
 @Repository
-public class RoleRepository implements JpaRepository<Role, Serializable> {
+public interface RoleRepository extends JpaRepository<Role, Serializable> {
 
 }

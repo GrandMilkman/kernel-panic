@@ -9,25 +9,27 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-@Table(name="users")
+@Table(name = "users")
 public class User extends AbstractEntity {
 
-	@Column(name="name")
+	@Column(name = "name")
 	private String name;
-	
-	@Column(name="password")
+
+	@Column(name = "password")
 	private String password;
-	@Column(name="lang")
+
+	@Column(name = "lang")
 	private String lang;
-	@Column(name="phone_number")
+
+	@Column(name = "phone_num")
 	private String phone_number;
 
-	@ManyToMany(cascade = {CascadeType.ALL})
-	@JoinTable(
-			name="user_role",
-			joinColumns= { @JoinColumn(name = "user_id")},
-			inverseJoinColumns= { @JoinColumn(name = "role_id")}
-			)
+	@Column(name = "active")
+	private boolean active;
+
+	@ManyToMany(cascade = { CascadeType.ALL })
+	@JoinTable(name = "user_role", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = {
+			@JoinColumn(name = "role_id") })
 	private ArrayList<Role> roles;
 
 	public String getName() {
@@ -68,6 +70,14 @@ public class User extends AbstractEntity {
 
 	public void setRoles(ArrayList<Role> roles) {
 		this.roles = roles;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 
 }
