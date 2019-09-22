@@ -2,14 +2,24 @@ package file.entity;
 
 import java.sql.Date;
 
-public class Message extends Entity{
+import javax.persistence.Column;
+import javax.persistence.Table;
+
+
+
+@Table(name="message")
+public class Message extends AbstractEntity{
 	
+	@Column(name="body")
 	private String body;
 	
+	@Column(name="from")
 	User from;
 	
+	@Column(name="to")
 	User to;
 	
+	@Column(name="date")
 	Date date;
 
 	public String getBody() {

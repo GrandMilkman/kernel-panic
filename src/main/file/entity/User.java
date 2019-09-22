@@ -2,16 +2,32 @@ package file.entity;
 
 import java.util.ArrayList;
 
-public class User extends Entity {
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
+@Table(name="users")
+public class User extends AbstractEntity {
+
+	@Column(name="name")
 	private String name;
-
+	
+	@Column(name="password")
 	private String password;
-
+	@Column(name="lang")
 	private String lang;
-
+	@Column(name="phone_number")
 	private String phone_number;
 
+	@ManyToMany(cascade = {CascadeType.ALL})
+	@JoinTable(
+			name="user_role",
+			joinColumns= { @JoinColumn(name = "user_id")},
+			inverseJoinColumns= { @JoinColumn(name = "role_id")}
+			)
 	private ArrayList<Role> roles;
 
 	public String getName() {

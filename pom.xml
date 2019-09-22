@@ -208,6 +208,13 @@
     		<artifactId>spring-data-jpa</artifactId>
     		<version>1.0.0.RELEASE</version>
 		</dependency>
+		
+		<!-- Hibernate -->
+		<dependency>  
+    		<groupId>org.hibernate</groupId>  
+    		<artifactId>hibernate-core</artifactId>  
+    		<version>5.3.1.Final</version>  
+		</dependency> 
 
     </dependencies>
 
