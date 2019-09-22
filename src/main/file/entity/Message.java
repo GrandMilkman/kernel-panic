@@ -13,11 +13,11 @@ public class Message extends AbstractEntity{
 	@Column(name="body")
 	private String body;
 	
-	@Column(name="from")
-	User from;
+	@Column(name="from_id")
+	Long from_user_id;
 	
-	@Column(name="to")
-	User to;
+	@Column(name="to_id")
+	Long to_user_id;
 	
 	@Column(name="date")
 	Date date;
@@ -30,20 +30,20 @@ public class Message extends AbstractEntity{
 		this.body = body;
 	}
 
-	public User getFrom() {
-		return from;
+	public Long getFrom_user_id() {
+		return from_user_id;
 	}
 
-	public void setFrom(User from) {
-		this.from = from;
+	public void setFrom_user_id(Long from_user_id) {
+		this.from_user_id = from_user_id;
 	}
 
-	public User getTo() {
-		return to;
+	public Long getTo_user_id() {
+		return to_user_id;
 	}
 
-	public void setTo(User to) {
-		this.to = to;
+	public void setTo_user_id(Long to_user_id) {
+		this.to_user_id = to_user_id;
 	}
 
 	public Date getDate() {
